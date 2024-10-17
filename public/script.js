@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderPagination(totalPages, page) {
         paginationContainer.innerHTML = ''; // Clear previous pagination
 
+        if (totalPages <= 1) return; // Don't render pagination if there's only one page
+
         // Left arrow with FontAwesome
         const leftArrow = document.createElement('button');
         leftArrow.innerHTML = '<i class="fas fa-angle-left"></i>';
