@@ -55,16 +55,16 @@
     </header>
 
     <main>
-        <input type="text" id="search-input" placeholder="Buscar por título, autor o ISBN..." oninput="fetchBooks(1)">
-        <label for="items-per-page">Items per page:</label>
-        <select id="items-per-page">
-            <option value="18">18</option>
-            <option value="24">24</option>
-            <option value="30">30</option>
-            <option value="36">36</option>
-        </select>
+        <section class="catalogue">
+            <input type="text" id="search-input" placeholder="Buscar por título, autor o ISBN..." oninput="fetchBooks(1)">
+            <label for="items-per-page">Libros por página:</label>
+            <select id="items-per-page">
+                <option value="18">18</option>
+                <option value="24">24</option>
+                <option value="30">30</option>
+                <option value="36">36</option>
+            </select>
 
-        <section>
             <div id="book-catalog"></div>
             <div id="pagination"></div>
         </section>
@@ -74,7 +74,7 @@
 
     <footer>
         <div class="container">
-            <!-- <div class="col"
+            <div class="col"
                 onclick="window.open('https://www.google.com/maps/dir//UTN+Facultad+Regional+de+San+Francisco+Av.+de+la+Universidad+501,+2400+X2400+San+Francisco+C%C3%B3rdoba/@-31.4207983,-62.110506,15z/data=!4m5!4m4!1m0!1m2!1m1!1s0x95cb28503f73860f:0xa4607cc996083ed4', '_blank')">
                 <iframe id="utn-map"
                     url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5907.442025028446!2d-62.10977235340571!3d-31.422009278008908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cb28503f73860f%3A0xa4607cc996083ed4!2sUTN%20Facultad%20Regional%20de%20San%20Francisco!5e0!3m2!1ses!2sar!4v1698952784276!5m2!1ses!2sar"
@@ -82,7 +82,7 @@
                     referrerpolicy="no-referrer-when-downgrade"
                     onclick="https://www.google.com/maps/dir//UTN+Facultad+Regional+de+San+Francisco+Av.+de+la+Universidad+501,+2400+X2400+San+Francisco+C%C3%B3rdoba/@-31.4207983,-62.110506,15z/data=!4m5!4m4!1m0!1m2!1m1!1s0x95cb28503f73860f:0xa4607cc996083ed4"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5907.442025028446!2d-62.10977235340571!3d-31.422009278008908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cb28503f73860f%3A0xa4607cc996083ed4!2sUTN%20Facultad%20Regional%20de%20San%20Francisco!5e0!3m2!1ses!2sar!4v1698952784276!5m2!1ses!2sar"></iframe>
-            </div> -->
+            </div>
             <div class="col">
                 <div class="logo">
                     <img src="assets/img/logo-utn-frsf.svg" alt="Logo UTN Facultad Regional San Francisco">
