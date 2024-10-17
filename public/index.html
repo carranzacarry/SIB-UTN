@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,30 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
+
 <body>
     <header>
         <h1>Catálogo de Libros</h1>
         <input type="text" id="search-input" placeholder="Buscar por título o autor..." oninput="fetchBooks(1)">
     </header>
     
-    <!-- Book Catalog Section -->
+    <label for="items-per-page">Items per page:</label>
+    <select id="items-per-page">
+        <option value="18">18</option>
+        <option value="24">24</option>
+        <option value="30">30</option>
+        <option value="36">36</option>
+    </select>       
+
     <section>
-        <div id="book-catalog"></div> <!-- This is where the books will be displayed -->
-        <div id="pagination"></div> <!-- Pagination controls go here -->
+
+        <div id="book-catalog"></div>
+        <div id="pagination"></div>
     </section>
 
-    <script src="script.js"></script> <!-- External JavaScript file -->
+    <script src="script.js"></script>
 </body>
+
 </html>
