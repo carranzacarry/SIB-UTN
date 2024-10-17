@@ -6,8 +6,30 @@ function capitalizeText(text) {
 }
 
 function reformatAuthorName(author) {
-    const [lastName, firstName] = author.split(',').map(name => name.trim());
-    return `${firstName} ${lastName}`
+    if (author.includes(',')) {
+        const [lastName, firstName] = author.split(',').map(name => name.trim());
+        return `${firstName} ${lastName}`
+    }
+    return author;
+}
+
+function getOrdinalSuffix(edition) {
+    const suffixes = {
+        1: 'ra',
+        2: 'da',
+        3: 'ra',
+        4: 'ta',
+        5: 'ta',
+        6: 'ta',
+        7: 'ma',
+        8: 'va',
+        9: 'na',
+        0: 'ma'
+    };
+
+    const lastDigit = edition % 10;
+
+    return suffixes[lastDigit] || '';
 }
 
 function fetchBookDetails(bookId) {
@@ -29,12 +51,29 @@ function displayBookDetails(book) {
         </div>
         <div class="book-detail-info">
             <h2>${capitalizeText(book.title)}</h2>
-            <p>Por: ${capitalizeText(reformatAuthorName(book.author))}</p>
+            <h3>
+                <span class="book-tags">Por:</span>
+                <span>${capitalizeText(reformatAuthorName(book.author))}</span>
+            </h3>
             <br>
-            <p>ISBN: ${book.isbn}</p>
-            <p>Edición: ${book.edition}</p>
-            <p>Año: ${book.year}</p>
-            <p>Copias disponibles: ${book.available_copies}/${book.total_copies}</p>
+            <ul>
+                <li>
+                    <span class="book-tags">ISBN:</span>
+                    <span>${book.isbn}</span>
+                </li>
+                <li>
+                    <span class="book-tags">Edición:</span>
+                    <span>${book.edition}${getOrdinalSuffix(book.edition)} Edición</span>
+                </li>
+                <li>
+                    <span class="book-tags">Año:</span>
+                    <span>${book.year}</span>
+                </li>
+                <li>
+                    <span class="book-tags">Copias disponibles:</span>
+                    <span>${book.available_copies} / ${book.total_copies}</span>
+                </li>
+            </ul>
         </div>
     `;
 }

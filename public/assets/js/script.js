@@ -25,8 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function reformatAuthorName(author) {
-        const [lastName, firstName] = author.split(',').map(name => name.trim());
-        return `${firstName} ${lastName}`
+        if (author.includes(',')) {
+            const [lastName, firstName] = author.split(',').map(name => name.trim());
+            return `${firstName} ${lastName}`
+        }
+        return author;
     }
 
     function renderBooks(books) {
