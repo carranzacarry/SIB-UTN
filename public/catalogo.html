@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -28,7 +30,7 @@
         <nav class="nav-bar">
             <div class="logo">
                 <img src="assets/img/logo-utn-frsf.svg?v=1" alt="Logo UTN Facultad Regional San Francisco"
-                    onclick="window.location = '#'">
+                    onclick="window.location = 'index.html'">
             </div>
             <div class="nav-menu">
                 <a href="index.html">Inicio</a>
@@ -53,58 +55,26 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h2>Bienvenido a la <span id="biblioteca-utn-title">Biblioteca UTN</span></h2>
-                    <p>Explora todos los recursos académicos que tenemos disponibles</p>
-                    <input type="text" placeholder="Buscar por título, autor, palabra clave o ISBN...">
-                </div>
-                <div class="scroll-info">
-                    <p>Aprender más</p>
-                    <a href="#categories" class="scroll-down">
-                        <i class="fa-solid fa-angle-down"></i>
-                    </a>
-                </div>
-            </div>
+        <input type="text" id="search-input" placeholder="Buscar por título, autor o ISBN..." oninput="fetchBooks(1)">
+        <label for="items-per-page">Items per page:</label>
+        <select id="items-per-page">
+            <option value="18">18</option>
+            <option value="24">24</option>
+            <option value="30">30</option>
+            <option value="36">36</option>
+        </select>
+
+        <section>
+            <div id="book-catalog"></div>
+            <div id="pagination"></div>
         </section>
-        <section class="categories" id="categories">
-            <div class="container">
-                <h2>Categorías</h2>
-                <div class="categories-grid">
-                    <a href="catalogo.html" class="category">
-                        <img src="assets/img/quimica.jpg" alt="Química">
-                        <p>Química</p>
-                    </a>
-                    <a href="catalogo.html" class="category">
-                        <img src="assets/img/fisica.jpg" alt="Física">
-                        <p>Física</p>
-                    </a>
-                    <a href="catalogo.html" class="category">
-                        <img src="assets/img/analisis.jpg" alt="Análisis Matemático">
-                        <p>Análisis Matemático</p>
-                    </a>
-                    <a href="catalogo.html" class="category">
-                        <img src="assets/img/economia.jpg" alt="Economía">
-                        <p>Economía</p>
-                    </a>
-                    <a href="catalogo.html" class="category">
-                        <img src="assets/img/civil.jpg" alt="Civil">
-                        <p>Civil</p>
-                    </a>
-                    <a href="catalogo.html" class="category">
-                        <img src="assets/img/derecho.jpg" alt="Derecho">
-                        <p>Derecho</p>
-                    </a>
-                </div>
-                <a href="catalogo.html" class="view-more-btn">Ver más</a>
-            </div>
-        </section>
+
+        <script src="assets/js/script.js"></script>
     </main>
 
     <footer>
         <div class="container">
-            <div class="col"
+            <!-- <div class="col"
                 onclick="window.open('https://www.google.com/maps/dir//UTN+Facultad+Regional+de+San+Francisco+Av.+de+la+Universidad+501,+2400+X2400+San+Francisco+C%C3%B3rdoba/@-31.4207983,-62.110506,15z/data=!4m5!4m4!1m0!1m2!1m1!1s0x95cb28503f73860f:0xa4607cc996083ed4', '_blank')">
                 <iframe id="utn-map"
                     url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5907.442025028446!2d-62.10977235340571!3d-31.422009278008908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cb28503f73860f%3A0xa4607cc996083ed4!2sUTN%20Facultad%20Regional%20de%20San%20Francisco!5e0!3m2!1ses!2sar!4v1698952784276!5m2!1ses!2sar"
@@ -112,7 +82,7 @@
                     referrerpolicy="no-referrer-when-downgrade"
                     onclick="https://www.google.com/maps/dir//UTN+Facultad+Regional+de+San+Francisco+Av.+de+la+Universidad+501,+2400+X2400+San+Francisco+C%C3%B3rdoba/@-31.4207983,-62.110506,15z/data=!4m5!4m4!1m0!1m2!1m1!1s0x95cb28503f73860f:0xa4607cc996083ed4"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5907.442025028446!2d-62.10977235340571!3d-31.422009278008908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cb28503f73860f%3A0xa4607cc996083ed4!2sUTN%20Facultad%20Regional%20de%20San%20Francisco!5e0!3m2!1ses!2sar!4v1698952784276!5m2!1ses!2sar"></iframe>
-            </div>
+            </div> -->
             <div class="col">
                 <div class="logo">
                     <img src="assets/img/logo-utn-frsf.svg" alt="Logo UTN Facultad Regional San Francisco">
