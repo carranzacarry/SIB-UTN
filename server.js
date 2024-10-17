@@ -13,7 +13,6 @@ const connection = mysql.createConnection({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Fetch books with pagination and search by title, author, or ISBN
 app.get('/books', (req, res) => {
     const currentPage = parseInt(req.query.page) || 1;
     const search = req.query.search || '';
