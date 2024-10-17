@@ -35,13 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const bookElement = document.createElement('div');
             bookElement.classList.add('book');
             bookElement.innerHTML = `
-                <div class="book-cover">
+            <a href="book.html?book_id=${book.book_id}" class="book-link">
+                    <div class="book-cover">
                     <img src="assets/img/cover-not-available.png" alt="${book.title}">
-                </div>
-                <div class="book-details">
-                    <h3>${capitalizeText(book.title)}</h3>
-                    <p>${capitalizeText(reformatAuthorName(book.author))}</p>
-                </div>
+                    </div>
+                    <div class="book-details">
+                        <h3>${capitalizeText(book.title)}</h3>
+                        <p>${capitalizeText(reformatAuthorName(book.author))}</p>
+                    </div>
+                </a>
             `;
             bookCatalog.appendChild(bookElement);
         });

@@ -418,6 +418,7 @@ main .catalogue .book-details h3 {
 }
 
 main .catalogue .book-details p {
+    margin-top: 10px;
     font-size: 0.75rem;
     font-weight: 500;
     color: #777;
@@ -461,6 +462,43 @@ main .catalogue #pagination button:disabled {
 
 main .catalogue #pagination button i {
     font-size: 16px;
+}
+
+/* Book Page */
+
+main .container #book-details {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+main .container .book-details .book-detail-cover {
+    flex: 1;
+}
+
+main .container .book-details .book-detail-cover img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+main .container .book-details .book-detail-info {
+    flex: 2;
+}
+
+main .container .book-details .book-detail-info h1 {
+    font-size: 1.8em;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+main .container .book-details .book-detail-info p {
+    margin: 10px 0;
 }
 
 /* --- FOOTER --- */

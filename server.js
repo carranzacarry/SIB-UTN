@@ -50,6 +50,23 @@ app.get('/books', (req, res) => {
     });
 });
 
+app.get('/book/:book_id', (req, res) => {
+    const bookId = req.params.book_id;
+
+    const query = 'SELECT * FROM book_inventory WHERE book_id = ?';
+    connection.query(query, [bookId], (error, results) => {
+        if (error) {
+            res.status(500).send('Error fetching book details');
+        } else {
+            if (results.length > 0) {
+                res.json(results[0]);
+            } else {
+                res.status(404).send('Book not found');
+            }
+        }
+    });
+});
+
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
