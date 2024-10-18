@@ -13,7 +13,11 @@ function reformatAuthorName(author) {
     return author;
 }
 
-function getOrdinalSuffix(edition) {
+function getOrdinalNumber(edition) {
+    if(edition === 0){
+        edition = 1;
+    };
+
     const suffixes = {
         1: 'ra',
         2: 'da',
@@ -29,7 +33,9 @@ function getOrdinalSuffix(edition) {
 
     const lastDigit = edition % 10;
 
-    return suffixes[lastDigit] || '';
+    ordinalNumber = edition + suffixes[lastDigit];
+
+    return ordinalNumber;
 }
 
 function fetchBookDetails(bookId) {
@@ -63,7 +69,7 @@ function displayBookDetails(book) {
                 </li>
                 <li>
                     <span class="book-tags">Edición:</span>
-                    <span>${book.edition}${getOrdinalSuffix(book.edition)} Edición</span>
+                    <span>${getOrdinalNumber(book.edition)} Edición</span>
                 </li>
                 <li>
                     <span class="book-tags">Año:</span>
