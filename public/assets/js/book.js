@@ -1,6 +1,17 @@
 const params = new URLSearchParams(window.location.search);
 const bookId = params.get('book_id');
 
+function fetchBookDetails(bookId) {
+    fetch(`/book/${bookId}`)
+        .then(response => response.json())
+        .then(book => {
+            displayBookDetails(book);
+        })
+        .catch(error => {
+            console.error('Error fetching book details:', error);
+        });
+}
+
 function capitalizeText(text) {
     return text.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
 }
@@ -38,17 +49,6 @@ function getOrdinalNumber(edition) {
     return ordinalNumber;
 }
 
-function fetchBookDetails(bookId) {
-    fetch(`/book/${bookId}`)
-        .then(response => response.json())
-        .then(book => {
-            displayBookDetails(book);
-        })
-        .catch(error => {
-            console.error('Error fetching book details:', error);
-        });
-}
-
 function displayBookDetails(book) {
     const bookDetailsDiv = document.getElementById('book-details');
     bookDetailsDiv.innerHTML = `
@@ -59,25 +59,25 @@ function displayBookDetails(book) {
             <h2>${capitalizeText(book.title)}</h2>
             <h3>
                 <span class="book-tags">Por:</span>
-                <span>${capitalizeText(reformatAuthorName(book.author))}</span>
+                <span class="book-info">${capitalizeText(reformatAuthorName(book.author))}</span>
             </h3>
             <br>
             <ul>
                 <li>
                     <span class="book-tags">ISBN:</span>
-                    <span>${book.isbn}</span>
+                    <span class="book-info">${book.isbn}</span>
                 </li>
                 <li>
                     <span class="book-tags">Edición:</span>
-                    <span>${getOrdinalNumber(book.edition)} Edición</span>
+                    <span class="book-info">${getOrdinalNumber(book.edition)} Edición</span>
                 </li>
                 <li>
                     <span class="book-tags">Año:</span>
-                    <span>${book.year}</span>
+                    <span class="book-info">${book.year}</span>
                 </li>
                 <li>
-                    <span class="book-tags">Copias disponibles:</span>
-                    <span>${book.available_copies} / ${book.total_copies}</span>
+                    <span class="book-tags">Disponibles:</span>
+                    <span class="book-info">${book.available_copies} / ${book.total_copies}</span>
                 </li>
             </ul>
         </div>
