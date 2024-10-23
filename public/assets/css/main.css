@@ -504,12 +504,13 @@ main .container #book-details {
     margin: 0 auto;
     background-color: #fff;
     padding: 50px 20px;
+    justify-content: center;
 }
 
 main .container #book-details .book-detail-cover img {
     width: auto;
     height: 440px;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 main .container #book-details .book-detail-info {
