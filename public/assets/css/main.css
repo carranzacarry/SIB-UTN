@@ -430,9 +430,53 @@ main .catalogue .book a {
 }
 
 main .catalogue .book .book-link .book-cover img {
-    max-width: 100%;
+    width: 200px;
     height: auto;
     margin-bottom: 10px;
+}
+
+main .catalogue .book .book-link .book-cover-blank {
+    display: block;
+    max-width: 200px;
+    height: calc((200px * 1.517) - 2rem);
+    margin-bottom: 10px;
+    padding: 1rem;
+    background: #ddd;
+}
+
+main .catalogue .book .book-link .book-cover-blank .container {
+    border: 2px solid var(--white);
+    min-width: 145px;
+    height: 269px;
+    margin: 0 auto;
+}
+
+main .catalogue .book .book-link .book-cover-blank .container .book-cover-blank-text {
+    height: 100px;
+    margin-top: 60px;
+    overflow-wrap: break-word;
+}
+
+
+main .catalogue .book .book-link .book-cover-blank .container .book-cover-blank-text span.cover-blank-title{
+    color: #333;
+    font-size: 1rem;
+}
+
+main .catalogue .book .book-link .book-cover-blank .container .book-cover-blank-text span.cover-blank-title::after{
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+main .catalogue .book .book-link .book-cover-blank .container .book-cover-blank-text span.cover-blank-author{
+    color: #666;
+    font-size: 0.625rem;
+    font-style: italic;
+    padding: 4px 4px 0;
 }
 
 main .catalogue .book .book-link .book-details {

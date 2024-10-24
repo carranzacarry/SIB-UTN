@@ -53,7 +53,15 @@ function displayBookDetails(book) {
     const bookDetailsDiv = document.getElementById('book-details');
     bookDetailsDiv.innerHTML = `
         <div class="book-detail-cover">
-            <img src="assets/img/cover-not-available.png" alt="${book.title}">
+            <!-- <img src="assets/img/cover-not-available.png" alt="${book.title}"> -->
+        </div>
+        <div class="book-detail-cover-blank">
+            <div class="container">
+                <div class="book-cover-blank-text">
+                    <span class="cover-blank-title">${capitalizeText(book.title)}</span>
+                    <span class="cover-blank-author">${capitalizeText(reformatAuthorName(book.author))}</span>
+                </div>
+            </div>
         </div>
         <div class="book-detail-info">
             <h2>${capitalizeText(book.title)}</h2>

@@ -40,7 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
             bookElement.innerHTML = `
             <a href="book.html?book_id=${book.book_id}" class="book-link">
                     <div class="book-cover">
-                    <img src="assets/img/cover-not-available.png" alt="${book.title}">
+                        <!-- <img src="assets/img/cover-not-available.png" alt="${book.title}"> -->
+                    </div>
+                    <div class="book-cover-blank">
+                        <div class="container">
+                            <div class="book-cover-blank-text">
+                                <span class="cover-blank-title">${capitalizeText(book.title)}</span>
+                                <span class="cover-blank-author">${capitalizeText(reformatAuthorName(book.author))}</span>
+                           </div>
+                        </div>
                     </div>
                     <div class="book-details">
                         <h3>${capitalizeText(book.title)}</h3>
