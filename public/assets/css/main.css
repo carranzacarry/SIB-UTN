@@ -507,6 +507,52 @@ main .container #book-details .book-detail-cover img {
     border-radius: 8px;
 }
 
+main .container #book-details .book-detail-cover-blank {
+    display: block;
+    width: calc(290px - 3rem);
+    height: calc(440px - 3rem);
+    margin-bottom: 10px;
+    padding: 1.5rem;
+    background: #ddd;
+    border-radius: 8px;
+}
+
+main .container #book-details .book-detail-cover-blank .container {
+    border: 2px solid var(--white);
+    min-width: calc(290px - 4.5rem);
+    height: calc(440px - 3rem);
+    margin: 0 auto;
+    justify-content: center;
+}
+
+main .container #book-details .book-detail-cover-blank .container .book-cover-blank-text {
+    height: 100px;
+    margin-top: 60px;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+
+main .container #book-details .book-detail-cover-blank .container .book-cover-blank-text span.cover-blank-title{
+    color: #333;
+    font-size: 1.75rem;
+}
+
+main .container #book-details .book-detail-cover-blank .container .book-cover-blank-text span.cover-blank-title::after{
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+main .container #book-details .book-detail-cover-blank .container .book-cover-blank-text span.cover-blank-author{
+    color: #666;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
 main .container #book-details .book-detail-info {
     margin-left: 20px;
     line-height: 1.8em;
