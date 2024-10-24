@@ -292,57 +292,19 @@ main .hero .scroll-info .scroll-down {
 
 /* Categories */
 
-main .categories {
+main #novedades {
     padding: 4rem 2rem;
     background-color: var(--lightgray);
     text-align: center;
 }
 
-main .categories h2 {
+main #novedades h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: var(--darkblue);
 }
 
-main .categories-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    justify-items: center;
-    margin-bottom: 4rem;
-}
-
-main .category {
-    background-color: transparent;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    transition: all .3s;
-    text-align: center;
-    width: 100%;
-    max-width: 400px;
-}
-
-main .category img {
-    width: 100%;
-    max-width: 400px;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-main .categories-grid a {
-    font-size: 1.25rem;
-    color: var(--darkblue);
-    text-decoration: none;
-    margin-bottom: 0;
-}
-
-main .category:hover {
-    transform: scale(1.05);
-}
-
-main .categories .view-more-btn {
+main #novedades .view-more-btn {
     margin-top: 2rem;
     padding: 0.75rem 2rem;
     background-color: transparent;
@@ -354,21 +316,9 @@ main .categories .view-more-btn {
     transition: background-color 0.3s, color 0.3s;
 }
 
-main .categories .view-more-btn:hover {
+main #novedades .view-more-btn:hover {
     background-color: var(--darkblue);
     color: var(--white);
-}
-
-@media (max-width: 768px) {
-    .categories-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .categories-grid {
-        grid-template-columns: 1fr !important;
-    }
 }
 
 /* Catalogue */
