@@ -50,7 +50,7 @@ app.get('/books', (req, res) => {
     });
 });
 
-app.get('/book-info/:book_id', (req, res) => {
+app.get('/book/:book_id', (req, res) => {
     const bookId = req.params.book_id;
 
     const query = 'SELECT * FROM book_inventory WHERE book_id = ?';
@@ -64,17 +64,6 @@ app.get('/book-info/:book_id', (req, res) => {
                 res.status(404).send('Book not found');
             }
         }
-    });
-});
-
-// Route to get the latest books
-app.get('/latest-books', (req, res) => {
-    const query = 'SELECT * FROM books ORDER BY created_at DESC LIMIT 5'; // Fetch 5 latest books based on creation date
-    db.query(query, (err, results) => {
-        if (err) {
-            return res.status(500).json({ error: 'Error fetching latest books' });
-        }
-        res.json(results); // Return latest books as JSON
     });
 });
 
