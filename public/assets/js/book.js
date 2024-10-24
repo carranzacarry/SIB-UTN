@@ -2,7 +2,7 @@ const params = new URLSearchParams(window.location.search);
 const bookId = params.get('book_id');
 
 function fetchBookDetails(bookId) {
-    fetch(`/book/${bookId}`)
+    fetch(`/book-info/${bookId}`)
         .then(response => response.json())
         .then(book => {
             displayBookDetails(book);
