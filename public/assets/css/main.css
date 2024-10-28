@@ -3,6 +3,7 @@
 :root {
     --white: #fff;
     --lightgray: #f0f0f0;
+    --lightgray2: #f7f7f7;
     --gray: #c6c6c6;
     --black: #000;
     --lightblue: #29a7e0;
@@ -627,6 +628,10 @@ main .biblioteca-info .container .visita-virtual-grid .visita-virtual-img img {
     object-fit: cover;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
+}
+
+#visita-virtual, #memorias {
+    background-color: var(--lightgray2);
 }
 
 /* --- FOOTER --- */
